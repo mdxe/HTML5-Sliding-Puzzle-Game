@@ -1,5 +1,4 @@
-# HTML5-Sliding-Puzzle-Game
+# HTML5-Puzzle-Game
 
-Small HTML5 Sliding game wherein you swap tiles to complete the picture.
+Small HTML5 puzzle game wherein you swap tiles to complete the picture, compatible with touchscreens and mouse.
 
-Optimised for Kik Browser and works with touch devices only (as of now).
