@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
     <title>Puzzle</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body onload="init();">
-    <canvas id="canvas" class ="noselect"></canvas>
+    <div class="canvas">
+        <canvas id="canvas" class ="noselect"></canvas>
+    </div>
+    <div>
+        <div id="nav">
+            <input type=button id="btn1" class="btn" value="Change Puzzle" onclick="showPuzzleList();";> 
+            <input type=button id="btn2" class="btn" value="Hint" onclick="showCurrentPuzzle();";>
+        </div>
+    </div>
+    <div id="puzzles" class="popup">
+        <div>
+            <img src="assets/puzzle1.jpg" onclick="changePuzzle(1);" width="20%" height="20%">
+            <img src="assets/puzzle2.jpg" onclick="changePuzzle(2);" width="20%" height="20%">
+            <img src="assets/puzzle3.jpg" onclick="changePuzzle(3);" width="20%" height="20%">
+            <img src="assets/puzzle4.jpg" onclick="changePuzzle(4);" width="20%" height="20%">
+            <img src="assets/puzzle5.jpg" onclick="changePuzzle(5);" width="20%" height="20%">
+            <img src="assets/puzzle6.jpg" onclick="changePuzzle(6);" width="20%" height="20%">
+            <img src="assets/puzzle7.jpg" onclick="changePuzzle(7);" width="20%" height="20%">
+            <img src="assets/puzzle8.jpg" onclick="changePuzzle(8);" width="20%" height="20%">
+        </div>
+    </div>
+    <div class="popup">
+        <div><img src="assets/puzzle8.jpg" id="puzzleImg"></div>
+    </div>
     <script src="js/game.js"></script>
 </body>
 

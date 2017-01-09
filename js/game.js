@@ -22,12 +22,14 @@ var _mouse;
 var _soundWin;
 var _soundClick;
 
+// TODO: set scale of hint image to fit screen...
+
 function init(){
     _soundWin   = new Audio("assets/win.ogg");
     _soundClick = new Audio("assets/click.ogg");
     _img = new Image();
     _img.addEventListener('load',onImage,false);
-    _img.src = "assets/game2.jpg";
+    _img.src = "assets/puzzle8.jpg";
 }
 
 function onImage(e){
@@ -75,6 +77,7 @@ function resizePieces(){
     }
     _pieceHeight = _puzzleHeight / PUZZLE_DIFFICULTY;
     _pieceWidth  = _puzzleWidth / PUZZLE_DIFFICULTY;
+
     resetPuzzleAndCheckWin();
 }
 
@@ -246,7 +249,7 @@ function resetPuzzleAndCheckWin(){
             gameWin = false;
         }
     }
-    if(gameWin){
+    if (gameWin){
         gameOver();
     }
 }
@@ -259,5 +262,32 @@ function gameOver(){
     _canvas.onmousedown = null;
     document.onmousemove = null;
     document.onmouseup = null;
+    window.removeEventListener('resize', resize);
 }
 
+function changePuzzle(puzzleNum){
+    _img.src = "assets/puzzle" + puzzleNum + ".jpg";
+    document.getElementById('puzzles').style.display = 'none';
+    document.getElementById('puzzleImg').src = "assets/puzzle" + puzzleNum + ".jpg"
+}
+
+function showPuzzleList(){
+    document.getElementById('puzzles').style.display = 'flex';
+}
+
+document.getElementById('puzzleImg').parentNode.parentNode.addEventListener('click', hideCurrentPuzzle, false);
+
+function showCurrentPuzzle(){
+    document.getElementById('puzzleImg').parentNode.parentNode.style.display = 'flex';
+}
+function hideCurrentPuzzle(){
+    document.getElementById('puzzleImg').parentNode.parentNode.style.display = 'none';
+}
+
+document.onkeypress = function (e) { // hide popups when ESC key is pressed
+    e = e || window.event;
+    if (e.keyCode === 27) {
+        document.getElementById('puzzleImg').parentNode.parentNode.style.display = 'none';
+        document.getElementById('puzzles').style.display = 'none';
+    }
+};

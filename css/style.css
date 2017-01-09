@@ -9,18 +9,54 @@ body {
     margin-right: auto;
     display: block;
 }
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
   -khtml-user-select: none;    /* Konqueror */
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* IE/Edge */
-  user-select: none;           /* non-prefixed version, currently
-                                  not supported by any browser */
+  user-select: none;           /* non-prefixed version, currently not supported by any browser */
 }
 
 html, body {
   width:  100%;
   height: 100%;
   margin: 0px;
+}
+
+.popup {
+    position: absolute;
+    width: window.innerWidth;
+    height: window.innerHeight;
+    left: 0; right:0;
+    top: 0; bottom:0;
+    margin:auto;
+    max-width:100%;
+    max-height:100%;
+    overflow:auto;
+    background-color: #000;
+    background-color: rgba(0,0,0,0.75);
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+#nav {
+    position: absolute;
+    display:flex;
+    top: 20px;
+    margin-left:  auto;
+    margin-right: auto;
+}
+
+.btn {
+    background-color: Transparent;
+    background-color: rgba(255,255,255,0.3);
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: #FF3333;
 }
